@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="manifest.json">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>My ToDo List</h1>
+        <input type="text" id="taskInput" placeholder="Schreib neue Aufgabe">
+        <button id="addTaskButton">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+    <div class="img"></div>
+    <script src="scripts/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('Service Worker зарегистрирован'))
+                .catch(err => console.error('Ошибка регистрации Service Worker:', err));
+        }
+    </script>
+</body>
+</html>
